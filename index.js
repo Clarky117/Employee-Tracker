@@ -1,5 +1,3 @@
-// create a CLI to manage employees
-
 //import inquirer
 const inquirer = require('inquirer');
 // import modules
@@ -25,14 +23,40 @@ function init(){
                 'Exit',
             ]
         },
+        // new department
         {
             message: 'What is the new department name?',
             type: 'input',
             name: 'department_name',
             when: (answer) => answer.operation === 'Add a department',
-        }
+        },
+        // new role
+        {
+            message: 'What is the ID of the new role?',
+            type: 'input',
+            name: 'role_id',
+            when: (answer) => answer.operation === 'Add a role'
+        },
+        {
+            message: 'What is the title of the new role?',
+            type: 'input',
+            name: 'role_title',
+            when: (answer) => answer.operation === 'Add a role'
+        },
+        {
+            message: 'What is the salary of the new role?',
+            type: 'input',
+            name: 'role_salary',
+            when: (answer) => answer.operation === 'Add a role'
+        },
+        {
+            message: 'What is the department ID of the new role?',
+            type: 'input',
+            name: 'role_department_id',
+            when: (answer) => answer.operation === 'Add a role'
+        },
     ]).then(async (answer) =>{
-        // run corrent function depending on response
+        // run current function depending on response
         
         switch(answer.operation){
             // view all departments,
@@ -54,7 +78,7 @@ function init(){
     
             // add a role,
             case 'Add a role':
-                const role = await addRole();
+                const role = await addRole(answer.role_id, answer.role_title, answer.role_salary, answer.role_department_id);
                 break;
     
             // view all employees, 

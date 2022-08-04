@@ -1,6 +1,6 @@
 // create functions to export
 
-function addDepartment(){
+function addDepartment(name){
     // add a department, 
     
 }

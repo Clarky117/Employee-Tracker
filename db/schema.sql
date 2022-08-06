@@ -13,7 +13,7 @@ CREATE TABLE `departments` (
 
 -- create table roles
   CREATE TABLE `roles` (
-  `id` INT UNSIGNED NOT NULL,
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` VARCHAR(255) NOT NULL,
   `salary` DECIMAL NOT NULL,
   `department_id` INT UNSIGNED NOT NULL,

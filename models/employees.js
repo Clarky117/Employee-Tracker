@@ -2,9 +2,12 @@
 
 const { connect } = require("../db/connection");
 
-function addEmployee(){
+async function addEmployee(firstName, lastName, roleID, managerID){
     // add an employee, 
-
+// INSERT INTO `employee_db`.`employees` (`first_name`, `last_name`, `role_id`, `manager_id`) VALUES ('Third', 'Take', '3', '1');
+const db = await connect();
+const employeeArray = [firstName, lastName, roleID, managerID];
+await db.query('INSERT INTO `employee_db`.`employees` (`first_name`, `last_name`, `role_id`, `manager_id`) VALUES (?, ?, ?, ?)', employeeArray);
 }
 
 async function getEmployees(){

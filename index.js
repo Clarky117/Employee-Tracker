@@ -31,12 +31,12 @@ function init(){
             when: (answer) => answer.operation === 'Add a department',
         },
         // new role
-        {
-            message: 'What is the ID of the new role?',
-            type: 'input',
-            name: 'role_id',
-            when: (answer) => answer.operation === 'Add a role'
-        },
+        // {
+        //     message: 'What is the ID of the new role?',
+        //     type: 'input',
+        //     name: 'role_id',
+        //     when: (answer) => answer.operation === 'Add a role'
+        // },
         {
             message: 'What is the title of the new role?',
             type: 'input',
@@ -54,6 +54,31 @@ function init(){
             type: 'input',
             name: 'role_department_id',
             when: (answer) => answer.operation === 'Add a role'
+        },
+        // add employee
+        {
+            message: 'What is the new employees first name?',
+            type: 'input',
+            name: 'first_name',
+            when: (answer) => answer.operation === 'Add an employee'
+        },
+        {
+            message: 'What is the new employees last name?',
+            type: 'input',
+            name: 'last_name',
+            when: (answer) => answer.operation === 'Add an employee'
+        },
+        {
+            message: 'What is the new employees role id?',
+            type: 'input',
+            name: 'role_id',
+            when: (answer) => answer.operation === 'Add an employee'
+        },
+        {
+            message: 'What is the new employees managers id?',
+            type: 'input',
+            name: 'manager_id',
+            when: (answer) => answer.operation === 'Add an employee'
         },
     ]).then(async (answer) =>{
         // run current function depending on response
@@ -77,8 +102,9 @@ function init(){
                 break;
     
             // add a role,
+            // answer.role_id, 
             case 'Add a role':
-                const role = await addRole(answer.role_id, answer.role_title, answer.role_salary, answer.role_department_id);
+                const role = await addRole(answer.role_title, answer.role_salary, answer.role_department_id);
                 break;
     
             // view all employees, 
@@ -89,7 +115,7 @@ function init(){
                 
             // add an employee, 
             case 'Add an employee':
-                const employee = await addEmployee();
+                const employee = await addEmployee(answer.first_name, answer.last_name, answer.role_id, answer.manager_id);
                 break;
     
             // and update an employee role

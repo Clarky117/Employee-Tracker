@@ -24,12 +24,9 @@ INSERT INTO employees (first_name, last_name, role_id, manager_id)
 VALUES ('Joe', 'Blogs', '2', '1'),
        ('Jane', 'Doe', '3', '1'),
        ('Harry', 'Potter', '4', '1'),
-
        ('Angus', 'Young', '5', '2'),
        ('Shamus', 'Black', '5', '2'),
-
        ('Andrew', 'Nelson', '6', '3'),
        ('James', 'Iterus', '6', '3'),
-
        ('Michael', 'Rogers', '7', '4'),
        ('Harry', 'Nunes', '7', '4');

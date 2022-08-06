@@ -17,9 +17,11 @@ async function getEmployees(){
     return employees;
 }
 
-function updateEmployeeRole(){
+async function updateEmployeeRole(employeeID, roleID){
     // and update an employee role
-
+    const db = await connect();
+    const employee = await db.query('UPDATE employees SET role_id = ? WHERE id = ?', [roleID, employeeID]);
+    return employee;
 }
 
 // export employee functions

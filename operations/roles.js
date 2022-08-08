@@ -12,7 +12,8 @@ async function addRole(title, salary, departmentID){
 async function getRoles(){
     // view all roles, 
     const db = await connect();
-    const [roles] = await db.query('SELECT * FROM roles');
+    // const [roles] = await db.query('SELECT * FROM roles');
+    const [roles] = await db.query('SELECT * FROM employee_db.roles JOIN employee_db.departments ON employee_db.roles.department_id = employee_db.departments.id');
     return roles;
 }
 

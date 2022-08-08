@@ -13,7 +13,8 @@ await db.query('INSERT INTO `employee_db`.`employees` (`first_name`, `last_name`
 async function getEmployees(){
     // view all employees, 
     const db = await connect();
-    const [employees] = await db.query('SELECT * FROM employees');
+    // const [employees] = await db.query('SELECT * FROM employees');
+    const [employees] = await db.query('SELECT * FROM employee_db.employees JOIN employee_db.roles ON employee_db.employees.role_id = employee_db.roles.id');
     return employees;
 }
 

@@ -56,4 +56,4 @@ Tables
 ## Links to Repository and Deployed Video
 
 - Repository - [Clarky's Repo](https://github.com/Clarky117/Employee-Tracker)
-- Live Video - [Employee Tracker](https://www.youtube.com)
+- Live Video - [Employee Tracker](https://www.youtube.com/watch?v=U5KXLzqG16o&t=17s)

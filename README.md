@@ -11,7 +11,7 @@
   
 ## Description
 
-In week 12 of the UWA coding bootcamp we have been tasked with building a command line application that allows non-developers to easily view and interact with information stored in databases.
+Built a command line application that allows non-developers to easily view and interact with information stored in databases.
 
 In this instance, as a business owner who isn't a developer, it is very important to be able to view and manage the departments, roles, and employees within the company so planning and organisation within the business becomes an easier part of the role.
 
